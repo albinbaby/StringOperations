@@ -18,11 +18,6 @@ void StringCopySafe(const char* szSource, char* szTarget, int nTargetLen)
 //String compare return zero on equal, positive integer if String 1 is bigger otherwise negative
 int StringCompare(const char* szString1, const char* szString2)
 {
-	while(*szString1 && *szString2 && (*szString1 == *szString2))
-	{
-		szString1++;
-		szString2++;
-	}
-
+	while(*szString1 && *szString2 && (*szString1++ == *szString2++));
 	return *szString1 - *szString2;
 }
